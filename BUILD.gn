@@ -1,0 +1,7 @@
+group("default") {
+  testonly = true
+  deps = [
+    "//benchmark",
+    "//examples",
+  ]
+}

@@ -1,0 +1,18 @@
+executable("futures") {
+  sources = [ "futures.cpp" ]
+  deps = [ "//external:catch2" ]
+}
+
+executable("stdexec") {
+  include_dirs = [ "//external/stdexec/include" ]
+  sources = [ "stdexec.cpp" ]
+  deps = [ "//external:catch2" ]
+}
+
+group("examples") {
+  testonly = true
+  deps = [
+    ":futures",
+    ":stdexec",
+  ]
+}

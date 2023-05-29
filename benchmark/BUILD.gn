@@ -1,0 +1,17 @@
+executable("benchmark") {
+  sources = [ "main.cpp" ]
+  if (is_win) {
+    cflags = [ "/arch:IA32" ]
+    ldflags = [ "/LARGEADDRESSAWARE" ]
+  } else {
+    cflags = [ "-fno-vectorize" ]
+  }
+  deps = [
+    "//external:simplemath",
+    "//external/asioext",
+    "//external/benchmark",
+    "//external/boost",
+    "//external/directxmath",
+    "//external/stdexec",
+  ]
+}

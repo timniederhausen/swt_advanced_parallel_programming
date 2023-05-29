@@ -1,0 +1,9 @@
+config("stdexec_config") {
+  include_dirs = [ "include" ]
+}
+
+group("stdexec") {
+  public_configs = [
+    ":stdexec_config",
+  ]
+}

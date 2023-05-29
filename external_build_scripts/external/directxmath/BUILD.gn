@@ -1,0 +1,14 @@
+config("directxmath_config") {
+  include_dirs = [ "Inc" ]
+
+  if (!is_win) {
+    defines = [ "PAL_STDCPP_COMPAT" ]
+    cflags = [ "-msse2" ]
+  }
+}
+
+group("directxmath") {
+  public_configs = [
+    ":directxmath_config",
+  ]
+}
